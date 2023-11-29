@@ -4,7 +4,7 @@ import Tab from './Tab';
 import { categorys } from '@/data/data';
 import Card from './Card';
 import PropTypes from 'prop-types';
-import { sortingDate } from '@/utils/sorting';
+import { showFormattedDate, sortingDate } from '@/utils/index';
 
 const View = ({ notes, setNotes }) => {
   const [chooseCategory, setChooseCategory] = useState(categorys);
@@ -65,7 +65,7 @@ const View = ({ notes, setNotes }) => {
             title={note.title}
             body={note.body}
             key={note.id}
-            date={note.createdAt}
+            date={showFormattedDate(note.createdAt)}
             status={!note.archived}
             handleArchiveNote={() => handleArchiveNote(note.id)}
             handleDeleteNote={() => handleDeleteNote(note.id)}

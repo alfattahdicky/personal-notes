@@ -4,10 +4,11 @@ import Search from '@/components/Search';
 import { note } from '@/data/data';
 import { useState } from 'react';
 import View from './components/View';
+import { getInitialData } from './utils';
 
 const App = () => {
   const [searchInput, setSearchInput] = useState('');
-  const [notes, setNotes] = useState([]);
+  const [notes, setNotes] = useState(getInitialData());
   const [filteredNotes, setFilteredNotes] = useState([]);
   const [inputNote, setInputNote] = useState(note);
 
